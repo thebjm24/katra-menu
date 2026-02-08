@@ -66,5 +66,7 @@ body {
   display: none;
 }
 
--ms-overflow-style: none;
-scrollbar-width: none;
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

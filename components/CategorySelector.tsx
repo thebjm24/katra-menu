@@ -14,7 +14,7 @@ export function CategorySelector({ onSelectCategory }: CategorySelectorProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="min-h-screen bg-black flex flex-col items-center justify-center p-6 gap-8"
+      className="w-full h-screen bg-black flex flex-col items-center justify-center p-6 gap-8"
     >
       {/* Header */}
       <motion.div
@@ -30,6 +30,7 @@ export function CategorySelector({ onSelectCategory }: CategorySelectorProps) {
               alt="Khatra"
               fill
               className="object-contain"
+              priority
             />
           </div>
         </div>
@@ -38,7 +39,7 @@ export function CategorySelector({ onSelectCategory }: CategorySelectorProps) {
       </motion.div>
 
       {/* Category Cards */}
-      <div className="w-full max-w-md space-y-4 flex-1 flex flex-col justify-center">
+      <div className="w-full max-w-md space-y-4">
         {categories.map((category, index) => (
           <motion.button
             key={category.id}
@@ -48,7 +49,7 @@ export function CategorySelector({ onSelectCategory }: CategorySelectorProps) {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => onSelectCategory(category.id as 'hot' | 'cold' | 'specialty')}
-            className="relative overflow-hidden rounded-xl p-6 text-left group cursor-pointer h-28 flex flex-col justify-center"
+            className="relative overflow-hidden rounded-xl p-6 text-left group cursor-pointer h-28 flex flex-col justify-center w-full"
             style={{ backgroundColor: category.color }}
           >
             {/* Gradient overlay */}
