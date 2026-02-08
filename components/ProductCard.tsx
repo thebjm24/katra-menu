@@ -8,7 +8,7 @@ interface ProductCardProps {
   product: Product
 }
 
-export function ProductCard({ product }: ProductCardProps) {
+export const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <motion.div
       className="w-full h-full flex flex-col items-center justify-center px-8"

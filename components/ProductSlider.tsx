@@ -14,7 +14,7 @@ interface ProductSliderProps {
   onBack: () => void
 }
 
-export function ProductSlider({ category, onBack }: ProductSliderProps) {
+export const ProductSlider = ({ category, onBack }: ProductSliderProps) => {
   const products = getProductsByCategory(category)
   const [currentProduct, setCurrentProduct] = useState<Product>(products[0])
   const [currentIndex, setCurrentIndex] = useState(0)
