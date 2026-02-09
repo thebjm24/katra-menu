@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Product } from '@/constants/products'
+import { Product, getTextColorForBackground } from '@/constants/products'
 import Image from 'next/image'
 
 interface ProductCardProps {
@@ -9,6 +9,9 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
+  const textColor = getTextColorForBackground(product.backgroundColor)
+  const isDarkBackground = textColor === '#ffffff'
+  
   return (
     <motion.div
       className="w-full h-full flex flex-col items-center justify-center px-8"
@@ -52,7 +55,12 @@ export default function ProductCard({ product }: ProductCardProps) {
         className="text-center space-y-6"
       >
         {/* Product Name */}
-        <h2 className="text-4xl font-bold text-white text-balance">{product.name}</h2>
+        <h2 
+          className="text-4xl font-bold text-balance drop-shadow-lg"
+          style={{ color: textColor }}
+        >
+          {product.name}
+        </h2>
 
         {/* Price Tag */}
         <motion.div
@@ -61,7 +69,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           transition={{ duration: 0.4, delay: 0.2 }}
           className="inline-block"
         >
-          <div className="px-8 py-3 bg-white text-black rounded-full font-bold text-2xl">
+          <div className="px-8 py-3 bg-white text-black rounded-full font-bold text-2xl shadow-lg">
             {product.price.toFixed(2)} {product.currency}
           </div>
         </motion.div>
@@ -74,7 +82,8 @@ export default function ProductCard({ product }: ProductCardProps) {
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="text-gray-300 text-sm pt-4"
+          className="text-sm pt-4 drop-shadow-lg"
+          style={{ color: isDarkBackground ? '#cccccc' : '#333333' }}
         >
           ← Swipe to explore more →
         </motion.div>

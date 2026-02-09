@@ -13,7 +13,7 @@ export const products: Product[] = [
   {
     id: 'espresso',
     name: 'Espresso',
-    price: 8.00,
+    price: 7.00,
     currency: 'DH',
     image: '/espresso.png',
     backgroundColor: '#1a0f08',
@@ -22,7 +22,7 @@ export const products: Product[] = [
   {
     id: 'double-espresso',
     name: 'Double Espresso',
-    price: 9.00,
+    price: 10.00,
     currency: 'DH',
     image: '/double espresso.png',
     backgroundColor: '#2b1810',
@@ -40,7 +40,7 @@ export const products: Product[] = [
   {
     id: 'macchiato',
     name: 'Macchiato',
-    price: 10.00,
+    price: 8.00,
     currency: 'DH',
     image: '/macchiato.png',
     backgroundColor: '#5d3d25',
@@ -49,7 +49,7 @@ export const products: Product[] = [
   {
     id: 'cafe-mocha',
     name: 'Café Mocha',
-    price: 10.00,
+    price: 8.00,
     currency: 'DH',
     image: '/café mocha.png',
     backgroundColor: '#3e2723',
@@ -58,7 +58,7 @@ export const products: Product[] = [
   {
     id: 'cafe-creme',
     name: 'Café Crème',
-    price: 10.00,
+    price: 8.00,
     currency: 'DH',
     image: '/café créme.png',
     backgroundColor: '#6d4c41',
@@ -76,7 +76,7 @@ export const products: Product[] = [
   {
     id: 'latte-caramel',
     name: 'Latté Caramel',
-    price: 8.00,
+    price: 9.00,
     currency: 'DH',
     image: '/Latté caramel.png',
     backgroundColor: '#b8956a',
@@ -85,7 +85,7 @@ export const products: Product[] = [
   {
     id: 'chocolate-chaud',
     name: 'Chocolat Chaud',
-    price: 8.00,
+    price: 10.00,
     currency: 'DH',
     image: '/chocolate chaud.png',
     backgroundColor: '#6f4e37',
@@ -94,7 +94,7 @@ export const products: Product[] = [
   {
     id: 'chocolate-blanc',
     name: 'Chocolat Blanc',
-    price: 7.00,
+    price: 10.00,
     currency: 'DH',
     image: '/chocolate blanc.png',
     backgroundColor: '#fff8e7',
@@ -199,4 +199,18 @@ export const categories = [
 
 export function getProductsByCategory(category: 'hot' | 'cold' | 'specialty') {
   return products.filter((p) => p.category === category)
+}
+
+export function getTextColorForBackground(backgroundColor: string): string {
+  // Convert hex to RGB
+  const hex = backgroundColor.replace('#', '')
+  const r = parseInt(hex.substr(0, 2), 16)
+  const g = parseInt(hex.substr(2, 2), 16)
+  const b = parseInt(hex.substr(4, 2), 16)
+  
+  // Calculate luminance (brightness)
+  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255
+  
+  // Return white text for dark backgrounds, dark text for light backgrounds
+  return luminance > 0.5 ? '#000000' : '#ffffff'
 }
