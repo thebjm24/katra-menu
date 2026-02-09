@@ -8,7 +8,7 @@ interface SplashScreenProps {
   onComplete: () => void
 }
 
-export const SplashScreen = ({ onComplete }: SplashScreenProps) => {
+export default function SplashScreen({ onComplete }: SplashScreenProps) {
   const [isVisible, setIsVisible] = useState(true)
 
   useEffect(() => {

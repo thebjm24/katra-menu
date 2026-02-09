@@ -8,7 +8,7 @@ interface CategorySelectorProps {
   onSelectCategory: (category: 'hot' | 'cold' | 'specialty') => void
 }
 
-export const CategorySelector = ({ onSelectCategory }: CategorySelectorProps) => {
+export default function CategorySelector({ onSelectCategory }: CategorySelectorProps) {
   return (
     <motion.div
       initial={{ opacity: 0 }}

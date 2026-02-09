@@ -1,9 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import { SplashScreen } from '@/components/SplashScreen'
-import { CategorySelector } from '@/components/CategorySelector'
-import { ProductSlider } from '@/components/ProductSlider'
+import SplashScreen from '@/components/SplashScreen'
+import CategorySelector from '@/components/CategorySelector'
+import ProductSlider from '@/components/ProductSlider'
 
 type Screen = 'splash' | 'category' | 'products'
 

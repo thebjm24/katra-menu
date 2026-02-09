@@ -8,7 +8,7 @@ interface ProductCardProps {
   product: Product
 }
 
-export const ProductCard = ({ product }: ProductCardProps) => {
+export default function ProductCard({ product }: ProductCardProps) {
   return (
     <motion.div
       className="w-full h-full flex flex-col items-center justify-center px-8"
@@ -62,7 +62,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           className="inline-block"
         >
           <div className="px-8 py-3 bg-white text-black rounded-full font-bold text-2xl">
-            ${product.price.toFixed(2)}
+            {product.price.toFixed(2)} {product.currency}
           </div>
         </motion.div>
 

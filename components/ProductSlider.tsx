@@ -4,7 +4,7 @@ import { useState, useRef } from 'react'
 import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react'
 import { Swiper } from 'swiper'
 import { motion } from 'framer-motion'
-import { ProductCard } from './ProductCard'
+import ProductCard from './ProductCard'
 import { Product, getProductsByCategory } from '@/constants/products'
 import 'swiper/css'
 import Image from 'next/image'
@@ -14,7 +14,7 @@ interface ProductSliderProps {
   onBack: () => void
 }
 
-export const ProductSlider = ({ category, onBack }: ProductSliderProps) => {
+export default function ProductSlider({ category, onBack }: ProductSliderProps) {
   const products = getProductsByCategory(category)
   const [currentProduct, setCurrentProduct] = useState<Product>(products[0])
   const [currentIndex, setCurrentIndex] = useState(0)
