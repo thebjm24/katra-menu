@@ -84,8 +84,8 @@ export const products: Product[] = [
   },
   {
     id: 'spanish-caramel-latte',
-    name: 'Spanish Caramel Latte',
-    price: 6.50,
+    name: 'Spanish Latte',
+    price: 15.00,
     currency: 'MAD',
     image: '/Spanish Caramel Latte.png',
     backgroundColor: '#c4a57b',
@@ -141,7 +141,7 @@ export const products: Product[] = [
   {
     id: 'blue-curacao-mojito',
     name: 'Blue Curaçao Mojito',
-    price: 7.50,
+    price: 15.00,
     currency: 'MAD',
     image: '/Blue Curaçao Mojito.png',
     backgroundColor: '#01579b',
@@ -150,7 +150,7 @@ export const products: Product[] = [
   {
     id: 'pina-colada-cocktail',
     name: 'Piña Colada Cocktail',
-    price: 7.50,
+    price: 15.00,
     currency: 'MAD',
     image: '/Piña Colada Cocktail.png',
     backgroundColor: '#fff9c4',
@@ -159,7 +159,7 @@ export const products: Product[] = [
   {
     id: 'strawberry-milkshake',
     name: 'Strawberry Milkshake',
-    price: 6.00,
+    price: 15.00,
     currency: 'MAD',
     image: '/strawberry milkshake.png',
     backgroundColor: '#fce4ec',
@@ -168,7 +168,7 @@ export const products: Product[] = [
   {
     id: 'mango-milkshake',
     name: 'Mango Milkshake',
-    price: 6.00,
+    price: 15.00,
     currency: 'MAD',
     image: '/Mango Milkshake.png',
     backgroundColor: '#ffe0b2',
